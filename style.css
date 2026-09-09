@@ -1,0 +1,320 @@
+/* =========================================================
+   IPOP — plantilla per al portafoli professional (1DAM/2DAM)
+   -----------------------------------------------------------
+   Fitxer de disseny compartit per les 4 pàgines del lloc.
+   Els comentaris et diuen què pots tocar sense trencar res.
+   ========================================================= */
+
+/* ---- 1. Tokens (colors, tipografies, espaiats) ---- */
+:root {
+  --paper: #eef0ec;       /* fons general de la pàgina */
+  --paper-raised: #f8f9f6;/* fons de targetes/blocs, una mica més clar que el paper */
+  --ink: #16211c;         /* text principal i capçalera */
+  --ink-soft: #4a554e;    /* text secundari */
+  --line: #cfd3c9;        /* vores i separadors */
+
+  --accent-perfil: #0e6e5c;     /* verd petroli — pàgina Perfil */
+  --accent-auto: #6c4f77;       /* pruna — pàgina Autoconeixement */
+  --accent-mercat: #b5651d;     /* terra cuita — pàgina Mercat */
+  --accent-pla: #c98a12;        /* mostassa — pàgina Pla d'Acció */
+
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  --font-serif: "IBM Plex Serif", Georgia, "Times New Roman", serif;
+
+  --radius: 3px;
+  --max-width: 880px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+h1, h2, h3, .mono {
+  font-family: var(--font-mono);
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: 2.1rem; margin: 0 0 0.3em; }
+h2 { font-size: 1.15rem; margin: 0 0 0.9em; }
+h3 { font-size: 1rem; margin: 0 0 0.4em; }
+
+p { margin: 0 0 1em; }
+
+a { color: inherit; }
+
+ul, ol { padding-left: 1.3em; margin: 0 0 1em; }
+li { margin-bottom: 0.4em; }
+
+img { max-width: 100%; display: block; }
+
+/* ---- 2. Capçalera i navegació per pestanyes ----
+   La barra de dalt simula pestanyes d'arxius: cada pàgina
+   del lloc és un "fitxer" (perfil.html, mercat.html...). */
+
+.site-header {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.4rem 1.5rem 0;
+}
+
+.student-name {
+  font-size: 1.1rem;
+  margin: 0 0 0.15em;
+}
+
+.student-role {
+  color: #a9b3ac;
+  font-size: 0.9rem;
+  margin: 0 0 1.2rem;
+}
+
+nav.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  border-bottom: 2px solid rgba(255,255,255,0.15);
+}
+
+nav.tabs a {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: #c7cec9;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid transparent;
+  border-bottom: none;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+nav.tabs a:hover { color: var(--paper); background: rgba(255,255,255,0.12); }
+
+nav.tabs a[aria-current="page"] {
+  background: var(--paper);
+  color: var(--ink);
+  border-color: var(--paper);
+  font-weight: 600;
+}
+
+.breadcrumb {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0.7rem 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
+/* ---- 3. Hero (obertura de cada pàgina) ---- */
+
+.hero {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2.2rem 1.5rem 1rem;
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+}
+
+.hero-photo {
+  flex: none;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: var(--paper-raised);
+  border: 2px dashed var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--ink-soft);
+  text-align: center;
+  padding: 0.3rem;
+}
+
+.hero-text .tagline { color: var(--ink-soft); margin: 0; }
+
+/* ---- 4. Contingut ---- */
+
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0.5rem 1.5rem 4rem;
+}
+
+.section {
+  margin-top: 2.6rem;
+  padding-top: 0.3rem;
+}
+
+.section-intro {
+  color: var(--ink-soft);
+  max-width: 62ch;
+}
+
+/* Bloc amb barra de color a l'esquerra — el color indica de
+   quina pàgina és, i substitueix les targetes amb ombra. */
+.card {
+  background: var(--paper-raised);
+  border-left: 4px solid var(--accent, var(--ink));
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 1.1rem 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.card > *:last-child { margin-bottom: 0; }
+
+.card .card-num {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent, var(--ink-soft));
+  margin-right: 0.4em;
+}
+
+.placeholder {
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+.fill-box {
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  padding: 0.8rem 1rem;
+  color: var(--ink-soft);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  background: repeating-linear-gradient(
+    var(--paper-raised),
+    var(--paper-raised) 1.55em,
+    var(--line) 1.55em,
+    var(--line) calc(1.55em + 1px)
+  );
+}
+
+/* graella 2x2 — s'usa a Autoconeixement per al DAFO personal */
+.grid-2x2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.grid-2x2 > div {
+  background: var(--paper-raised);
+  padding: 1rem 1.1rem;
+}
+
+/* taules — Mercat Professional i Pla d'Acció */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.2rem;
+  font-size: 0.95rem;
+}
+
+th, td {
+  text-align: left;
+  padding: 0.55rem 0.6rem;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+th {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+/* línia de temps — Pla d'Acció */
+.timeline { list-style: none; padding-left: 0; margin: 0; }
+
+.timeline li {
+  position: relative;
+  padding-left: 2.4rem;
+  padding-bottom: 1.6rem;
+  border-left: 2px solid var(--line);
+  margin-left: 0.7rem;
+}
+
+.timeline li:last-child { border-color: transparent; padding-bottom: 0; }
+
+.timeline .step-num {
+  position: absolute;
+  left: -0.85rem;
+  top: 0;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background: var(--accent, var(--ink));
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---- 5. Peu de pàgina ---- */
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 1.2rem 1.5rem 2rem;
+}
+
+footer .footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+/* ---- 6. Responsive ---- */
+@media (max-width: 560px) {
+  h1 { font-size: 1.6rem; }
+  .hero { flex-direction: column; align-items: flex-start; }
+  .grid-2x2 { grid-template-columns: 1fr; }
+  table, thead, tbody, th, td, tr { display: block; }
+  th { display: none; }
+  td { border-bottom: none; padding: 0.2rem 0; }
+  tr { padding-bottom: 0.9rem; border-bottom: 1px solid var(--line); }
+  td::before {
+    content: attr(data-label) ": ";
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--ink-soft);
+    display: block;
+  }
+}
+
+/* ---- 7. Accessibilitat ---- */
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

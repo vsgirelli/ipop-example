@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El teu Nom i Cognoms — IPOP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Serif:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!--
+  COM FUNCIONA AQUESTA PLANTILLA
+  ------------------------------
+  Hi ha 4 pàgines HTML (una per cada apartat de l'IPOP) que
+  comparteixen el mateix full d'estils (style.css). Copia
+  l'estructura de capçalera/nav/peu tal qual a les 4 pàgines,
+  i només canvia el contingut de <main>.
+  Substitueix TOT el que estigui entre claudàtors [ ].
+-->
+
+<header class="site-header">
+  <div class="header-inner">
+    <p class="student-name mono">[El teu Nom i Cognoms]</p>
+    <p class="student-role">[1r/2n DAM · Nom del centre]</p>
+    <nav class="tabs" aria-label="Seccions de l'IPOP">
+      <a href="index.html" aria-current="page">perfil.html</a>
+      <a href="autoconeixement.html">autoconeixement.html</a>
+      <a href="mercat-professional.html">mercat.html</a>
+      <a href="pla-accio.html">pla-accio.html</a>
+    </nav>
+  </div>
+</header>
+
+<p class="breadcrumb mono">~/ipop/perfil.html</p>
+
+<div class="hero">
+  <div class="hero-photo">[la teva<br>foto]</div>
+  <div class="hero-text">
+    <h1>[El teu Nom i Cognoms]</h1>
+    <p class="tagline">[Una frase curta que et defineixi com a futur/a professional. Ex: "Desenvolupador/a en formació, interessat/da en aplicacions mòbils i bases de dades."]</p>
+  </div>
+</div>
+
+<main>
+
+  <section class="section">
+    <h2>Qui sóc</h2>
+    <p class="section-intro">Aquest apartat presenta el teu IPOP (Informe Personal per l'Orientació Professional): qui ets, què saps fer i cap on vols anar professionalment.</p>
+  </section>
+
+  <section class="section">
+    <h2>1. Presentació</h2>
+    <div class="card" style="--accent: var(--accent-perfil)">
+      <span class="card-num">01</span>
+      <p class="placeholder">[Explica qui ets, la teva trajectòria fins ara i els teus objectius acadèmics i professionals. Pots parlar d'experiències prèvies (feines, esports, voluntariat, projectes personals de programació...).]</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>2. Currículum vitae</h2>
+    <div class="card" style="--accent: var(--accent-perfil)">
+      <span class="card-num">02</span>
+      <p>[Enllaça aquí el teu CV. Pots pujar-lo com a PDF al mateix repositori de GitHub i enllaçar-lo, per exemple:]</p>
+      <p class="fill-box">&lt;a href="cv.pdf"&gt;Descarrega el meu CV&lt;/a&gt;</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>3. Carta de presentació</h2>
+    <div class="card" style="--accent: var(--accent-perfil)">
+      <span class="card-num">03</span>
+      <p class="placeholder">[Escriu o enllaça un model de carta de presentació que expressi qui ets i què ofereixes com a professional.]</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>4. Formació complementària i certificats</h2>
+    <div class="card" style="--accent: var(--accent-perfil)">
+      <span class="card-num">04</span>
+      <p class="placeholder">[Llista cursos, tallers o acreditacions fetes fora del cicle (Barcelona Activa, cursos online, certificacions...). Afegeix una frase sobre què t'ha aportat cadascun.]</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>5. Itinerari professional i especialització desitjada</h2>
+    <div class="card" style="--accent: var(--accent-perfil)">
+      <span class="card-num">05</span>
+      <p class="placeholder">[Quin camí vols seguir? Especialitat (frontend, backend, mòbil, dades...), sector i tipus d'empresa on t'agradaria treballar.]</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>6. Competències tècniques</h2>
+    <div class="card" style="--accent: var(--accent-perfil)">
+      <span class="card-num">06</span>
+      <p class="placeholder">[Llenguatges, eines i tecnologies que domines (per exemple: Java, SQL, Git, control de versions...). Justifica-ho amb pràctiques o projectes concrets del cicle.]</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>7. Competències transversals (soft skills)</h2>
+    <div class="card" style="--accent: var(--accent-perfil)">
+      <span class="card-num">07</span>
+      <p class="placeholder">[Responsabilitat, treball en equip, iniciativa, comunicació... Posa un exemple real per a cada competència.]</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>8. Estil de treball i valors professionals</h2>
+    <div class="card" style="--accent: var(--accent-perfil)">
+      <span class="card-num">08</span>
+      <p class="placeholder">[Com treballes millor? Sol/a, en equip, amb terminis clars? Quins valors vols mantenir com a professional?]</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>9. Presència digital</h2>
+    <div class="card" style="--accent: var(--accent-perfil)">
+      <span class="card-num">09</span>
+      <p>[Enllaça el teu perfil de LinkedIn, el teu GitHub i qualsevol altre lloc on es pugui veure la teva feina.]</p>
+      <ul>
+        <li><a href="#">[github.com/el-teu-usuari]</a></li>
+        <li><a href="#">[linkedin.com/in/el-teu-perfil]</a></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>[El teu Nom i Cognoms] · IPOP</span>
+    <span>Actualitzat: [mes any]</span>
+  </div>
+</footer>
+
+</body>
+</html>
